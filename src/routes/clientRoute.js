@@ -1,13 +1,8 @@
-import express from "express";
-
-import * as clientController from "../controllers/clientController.js";
-
+const express = require("express");
 const router = express.Router();
 
-router.get("/clients", clientController.getClients);
-router.post("/clients", clientController.createClient);
-router.put("/clients/:id", clientController.updateClient);
-router.delete("/clients/:id", clientController.deleteClient);
-router.get("/clients/search", clientController.searchClients);
+router.get("/", (req, res) => {
+  res.json({ message: "Client route working " });
+});
 
-export default router;
+module.exports = router;
