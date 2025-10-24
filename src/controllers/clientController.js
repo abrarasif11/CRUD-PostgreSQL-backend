@@ -1,4 +1,4 @@
-import * as clientService from "../services/clientServices";
+import * as clientService from "../services/clientServices.js";
 
 export const getClients = async (req, res) => {
   try {
@@ -7,5 +7,5 @@ export const getClients = async (req, res) => {
   } catch (err) {
     console.error("Error fetching clients:", err);
     res.status(500).json({ message: "Internal Server Error" });
-  } 
+  }
 };
