@@ -1,11 +1,6 @@
-import * as clientService from "../services/clientServices";
+import { query } from "../db"
 
-export const getClients = async (req, res) => {
-  try {
-    const clients = await clientService.getClients();
-    res.status(200).json(clients);
-  } catch (err) {
-    console.error("Error fetching clients:", err);
-    res.status(500).json({ message: "Internal Server Error" });
-  }
-};
+export const getClients = async() => {
+  const {rows} = await query('SELECT * FROM clients_tb')
+  return rows;
+}
