@@ -10,7 +10,7 @@ export const getClients = async (req, res) => {
   }
 };
 
-export const createClients = async (req, res) => {
+export const createClient = async (req, res) => {
   try {
     const clientData = req.body;
     const newClient = await clientService.createClient(clientData);
